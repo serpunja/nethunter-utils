@@ -77,7 +77,8 @@ echo "SSH_MOD: ${SSH_MOD}"
 echo '1' > /proc/sys/net/ipv4/ip_forward
 rfkill unblock wlan
 echo -- $phy: flushing interface --
-ip addr flush dev $phecho -- $phy: setting ip --
+ip addr flush dev $phy 
+echo -- $phy: setting ip --
 ip addr add 10.0.0.1/24 dev $phy
 echo -- $phy: starting the interface --
 ip link set $phy up
